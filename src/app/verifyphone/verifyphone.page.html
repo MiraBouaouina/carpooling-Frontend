@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="secondary"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div class="label_Class">
+    <h5>Enter your mobile number</h5>
+  </div>
+
+  <ion-row>
+    <ion-col size="4">
+      <ion-item mode="md">
+        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="IN+91"
+          [(ngModel)]="selectedValue" mode="ios">
+          <ion-select-option *ngFor="let item of countryCode" value={{item.dial_code}} selected>{{item.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+    <ion-col size="8">
+      <ion-item class="inputItem" mode="md">
+        <div color="medium" class="inputDiv">
+          <ion-text slot="start">{{selectedValue}}</ion-text>
+          <ion-input type="tel" class="item_input" [(ngModel)]="inputValue" maxlength="10" clearInput></ion-input>
+        </div>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <div class="policyText" text-center>
+    <ion-text color="medium">
+      Tab Next to verify your account with Account Kit Powered by Facebook.You don't need a facebook account to use
+      Account Kit.An SMS may be sent to verify your number.
+      Message and data rates may apply.<u>Learn how facebook uses your info.</u>
+    </ion-text>
+    <ion-button mode="md" expand="full" color="secondary" margin-top (click)="gotVerification(inputValue,selectedValue)"
+      [disabled]="inputValue == ''">Next
+    </ion-button>
+  </div>
+
+</ion-content>

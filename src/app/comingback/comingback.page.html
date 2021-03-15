@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="flex">
+    <ion-list>
+      <ion-item padding-horizontal>
+        <ion-label text-center>
+          <ion-text text-wrap>{{comingBack}}</ion-text>
+          <p>{{subheader}}</p>
+        </ion-label>
+      </ion-item>
+      <div class="centerContents">
+        <div class="image_Div"
+          [ngStyle]="{'background':'url( '+ confirmImage +')', 'background-size':'cover', 'background-position':'center'}">
+        </div>
+        <ion-item  (click)="goforReturnRide()" margin-vertical class="width100">
+          <ion-button expand="block" fill="solid" class="width" color="secondary">
+            Yeah, sure!
+          </ion-button>
+        </ion-item>
+
+        <ion-item   (click)="goforThanks()" class="width100">
+          <ion-button expand="full" fill="clear" class="width" color="secondary">
+            No, thanks
+          </ion-button>
+        </ion-item>
+      </div>
+
+    </ion-list>
+  </div>
+</ion-content>

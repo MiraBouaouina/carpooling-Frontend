@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <ion-text class="date">{{date}}</ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="tcktContainer">
+    <ion-row>
+      <ion-col size="2" class="boderCol">
+        <div class="timeDiv">
+          <div class="circle">
+            <ion-text color="danger">{{time}}</ion-text>
+          </div>
+          <div class="circle">
+            <ion-text color="success">01:00</ion-text>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="10">
+        <div class="routeInformation">
+          <ion-item>
+            <ion-label no-margin>
+              <ion-text>{{pickupLoc}}</ion-text>
+              <div class="flex">
+                <p>
+                  <ion-icon name="pin" expand="icon-only"></ion-icon>6.5km from your departure
+                </p>
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <ion-text>{{destLoc}}</ion-text>
+              <div class="flex">
+                <p>
+                  <ion-icon name="pin" expand="icon-only"></ion-icon>16.5km from your arrival
+                </p>
+              </div>
+
+            </ion-label>
+          </ion-item>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+
+
+
+  <ion-item>
+    <ion-text slot="start" class="seatsCount">4 seats available</ion-text>
+    <ion-label slot="end">
+      <ion-text class="costPrice">₹ {{rideData.cost}}</ion-text>
+      <p>per seat</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-text slot="start" color="secondary"> {{rideData.name}}</ion-text>
+    <ion-avatar slot="end" [ngStyle]="{'background':'url('+ rideData.image +')'}"></ion-avatar>
+  </ion-item>
+  <ion-item>
+    <p>{{rideData.car}}</p>
+  </ion-item>
+  <ion-item>
+    <ion-button expand="full" fill="clear" color="secondary">Contact {{rideData.name}}</ion-button>
+  </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="flash" slot="start" color="secondary"></ion-icon>
+      <ion-text color="success">Automatic approval</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="car" slot="start" color="secondary"></ion-icon>
+      <ion-text color="success">Max.2 in the back seats</ion-text>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar padding>
+    <ion-button expand="block" color="secondary" (click)="goforSeats()">Continue</ion-button>
+
+  </ion-toolbar>
+</ion-footer>

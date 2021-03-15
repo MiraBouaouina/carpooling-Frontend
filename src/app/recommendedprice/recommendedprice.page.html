@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="headerContent">
+    <ion-item>
+      <ion-label>
+        <ion-text text-wrap>{{headerText}}</ion-text>
+      </ion-label>
+    </ion-item>
+  </div>
+  <div class="count">
+    <ion-item>
+      <ion-label text-center>
+        <ion-text class="moneyText"><span>₹</span>250.00</ion-text>
+        <p>{{pickup}} >> {{destination}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-label>
+      <ion-button mode="md" color="secondary" expand="block" (click)="askforReturn()">Continue</ion-button>
+
+      <ion-button mode="md" no-padding color="secondary" (click)="notAgree()" expand="block" fill="clear">i don't agree
+      </ion-button>
+
+    </ion-label>
+
+  </div>
+</ion-content>

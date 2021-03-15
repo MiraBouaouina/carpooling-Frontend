@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Edit the price</ion-list-header>
+    <ion-row *ngFor="let priceChart of priceEditList;let i = index;">
+      <ion-col size="6">
+        <ion-item>
+          <ion-label>
+            <h2>{{priceChart.pickup}} >> {{priceChart.destination}}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-segment mode="md">
+          <ion-segment-button mode="md" no-padding color="undefined" (click)="updateCart('remove',i)" class="segmentBtn"
+            [disabled]="priceChart.price <= 100 ">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+          </ion-segment-button>
+
+          <ion-input padding-horizontal class="textUnits" [(ngModel)]="priceValue[i]"
+            placeholder={{priceChart.placeholder}} value=" ₹{{priceChart.price}}.00" readonly></ion-input>
+
+          <ion-segment-button mode="md" no-padding color="undefined" (click)="updateCart('add',i)" class="segmentBtn"
+            [disabled]="priceChart.price > 300 ">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
+<ion-footer padding>
+  <ion-toolbar>
+    <ion-button *ngIf="service.journey" expand="block" type="submit" color="secondary"
+      (click)="gotoDrop(priceValue[i])">Confirm</ion-button>
+    <ion-button *ngIf="!service.journey" expand="block" type="submit" color="secondary"
+      (click)="gotoDrop(priceValue[i])">Save</ion-button>
+
+  </ion-toolbar>
+</ion-footer>

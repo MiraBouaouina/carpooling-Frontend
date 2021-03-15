@@ -1,0 +1,65 @@
+/**
+  * Car Pool starter (https://store.enappd.com/product/blablacar-cloneionic-4-car-pooling-app-starter)
+ *
+ * Copyright © 2019-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source tree.
+ */.sc-ion-buttons-md-h.ion-color.sc-ion-buttons-md-s .button,
+.ion-color .sc-ion-buttons-md-h.sc-ion-buttons-md-s .button {
+  --color: white !important;
+  --color-activated: initial;
+}
+.text_color {
+  color: white;
+}
+.map_card {
+  position: absolute;
+  top: 3%;
+  background: white;
+  z-index: 999;
+  width: calc(100% - 5%);
+}
+.virtical_dash {
+  height: 22px !important;
+  width: 74%;
+  border-style: dashed;
+  display: flex;
+  border-left: dashed 1px;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  margin-left: 8px;
+}
+.icon_drop {
+  font-size: 18px;
+  color: green;
+}
+.icon_pin {
+  font-size: 18px;
+  color: var(--ion-color-all);
+}
+.horizontal_line {
+  border-bottom: solid 2px #66666661;
+}
+ion-label {
+  margin: 3px 3px 3px 0px !important;
+}
+ion-card {
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+}
+p {
+  margin: 0 0 2px;
+  font-size: 14px;
+  line-height: 35px;
+  text-overflow: inherit;
+  overflow: inherit;
+}
+
+.progress-outer {
+  color: orange !important;
+}
+
+.progress-inner {
+  background-color: white !important;
+}

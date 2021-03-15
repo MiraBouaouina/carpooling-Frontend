@@ -1,0 +1,9 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false">
+  <agm-overlay [latitude]="latitude" [longitude]="longitude">
+    <div class="overlayStyle">
+      S</div>
+  </agm-overlay>
+  <agm-direction [origin]="origin" [destination]="destination" [markerOptions]="markerOptions"
+    [renderOptions]="renderOptions">
+  </agm-direction>
+</agm-map>

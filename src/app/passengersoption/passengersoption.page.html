@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Passenger options</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-row>
+      <ion-col size="5">
+        <ion-item>
+          <ion-text slot="start">Number of passengers</ion-text>
+        </ion-item>
+      </ion-col>
+      <ion-col size="7">
+        <ion-item>
+          <ion-segment mode="md" slot="end">
+            <ion-segment-button mode="md" no-padding color="undefined" (click)="updateCart('remove')" class="segmentBtn"
+              [disabled]="product <= 0 ">
+              <ion-icon name="remove-circle-outline"></ion-icon>
+            </ion-segment-button>
+            <ion-input padding-horizontal class="textUnits" [(ngModel)]="passengerNo" value={{product}} readonly
+              placeholder={{product}}></ion-input>
+            <ion-segment-button mode="md" no-padding color="undefined" (click)="updateCart('add')" class="segmentBtn"
+              [disabled]="product > 5 ">
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-item *ngFor="let instructions of options">
+      <ion-icon name={{instructions.iconfirst}} color="secondary" mode="ios" expand="icon-only" slot="start"></ion-icon>
+      <ion-label>
+        <ion-text *ngIf="instructions.seats">Max. {{instructions.seats}} in the back seats</ion-text>
+        <ion-text>{{instructions.text}}</ion-text>
+      </ion-label>
+      <ion-checkbox name="paw" color="secondary" expand="icon-only" slot="end" checked *ngIf="instructions.checkbox">
+      </ion-checkbox>
+    </ion-item>
+    <ion-item padding-horizontal>
+      <ion-label position="stacked">Your message for passengers</ion-label>
+      <ion-textarea text-justify rows="6" cols="20" placeholder={{placeholdeText}}></ion-textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer padding>
+  <ion-toolbar>
+    <ion-button expand="block" color="secondary" type="submit" text-capitalize (click)="saveData()">Save</ion-button>
+  </ion-toolbar>
+</ion-footer>

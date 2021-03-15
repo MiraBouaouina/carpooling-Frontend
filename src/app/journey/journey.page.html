@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Journey & stops</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="mapClass">
+    <map-direction   [zoom]="zoom" [origin]="origin" [destination]="destination"
+      [markerOptions]="markerOptions" [latitude]="stopoverLat" [longitude]="stopoverLng"></map-direction>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let journeyDetails of rideData">
+      <ion-icon mode="ios" name={{journeyDetails.icon}} expand="icon-only" slot="start" color="danger"></ion-icon>
+      <ion-label>
+        <ion-text color="secondary">{{journeyDetails.head}}</ion-text>
+        <p text-wrap>{{journeyDetails.detail}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-button color="secondary" expand="block" text-capitalize>Save</ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

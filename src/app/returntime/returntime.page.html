@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item padding text-center>
+      <ion-label>
+        <ion-text *ngIf="comingFrom === 'findride' " text-wrap>{{headerFindaride}}</ion-text>
+        <ion-text *ngIf="comingFrom === 'returnTrip' " text-wrap>{{header}}</ion-text>
+      </ion-label>
+    </ion-item>
+    <ion-item padding text-center *ngIf="comingFrom === 'returnTrip' ">
+      <ion-label>
+        <ion-text>{{returnSchedule}}</ion-text>
+        <p>{{pickupFrom}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item padding text-center *ngIf="comingFrom === 'findride' ">
+      <ion-label>
+        <ion-text>{{findRideDate}}</ion-text>
+        <p>{{findRidePickupLoc}}</p>
+      </ion-label>
+    </ion-item>
+    <div class="timeContent">
+      <ion-card class="width">
+        <ion-item class="timeItem">
+          <ion-icon name="arrow-down" expand="icon-only" color="secondary" slot="end" mode="ios"></ion-icon>
+          <ion-datetime displayFormat="h:mm a" minuteValues="0,5,10,15,20,25,30,35,40,45,50,55" mode="ios"
+            [(ngModel)]="timeSelected" value="11:06Z" placeholder="Selecty Time">
+          </ion-datetime>
+        </ion-item>
+      </ion-card>
+    </div>
+
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="buttonContent" padding (click)="gotoCompelte(timeSelected)">
+      <ion-button expand="block" color="secondary" type="submit" text-capitalize>Continue</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

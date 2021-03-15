@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-text padding-start>Find a ride</ion-text>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-fab vertical="top" horizontal="end" slot="fixed" (click)="gotoSwipe()">
+    <ion-fab-button color="light">
+      <ion-img src="../../assets/image/repeat.png"></ion-img>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list>
+    <ion-item>
+      <ion-label text-start>
+        <ion-text> </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-card class="card_pickup1" (click)="gotoEdit('pickup')" *ngIf="pickup">
+    <ion-item>
+      <ion-icon slot="start" expand="icon-only" name="search"></ion-icon>
+      <ion-label text-center>
+        <h2 color="dark">PIck-Up Location</h2>
+        <p>{{pickupLoc}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="card_pickup1" (click)="gotoEdit('destination')" *ngIf="pickup">
+    <ion-item>
+      <ion-icon slot="start" expand="icon-only" name="search"></ion-icon>
+      <ion-label text-center>
+        <h2 color="dark">Destination Location</h2>
+        <p>{{destLoc}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+
+  <ion-card class="card_pickup1" (click)="gotoEdit('destination')" *ngIf="!pickup">
+    <ion-item>
+      <ion-icon slot="start" expand="icon-only" name="search"></ion-icon>
+      <ion-label text-center>
+        <h2 color="dark">Destination Location</h2>
+        <p>{{destLoc}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="card_pickup1" (click)="gotoEdit('pickup')" *ngIf="!pickup">
+    <ion-item class="mapcardItem">
+      <ion-icon slot="start" expand="icon-only" name="search"></ion-icon>
+      <ion-label text-center>
+        <h2 color="dark">PIck-Up Location</h2>
+        <p>{{pickupLoc}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-item (click)="goForDateTime('findride')">
+    <ion-label>
+      <ion-text>Date & Time</ion-text>
+      <p *ngIf="service.dateTime">Today, {{rightTime}}</p>
+      <p *ngIf="!service.dateTime">{{date}} , {{time}}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item margin-vertical>
+    <div padding class="width">
+      <ion-button color="secondary" expand="block" (click)="goforSearchResults()">search</ion-button>
+    </div>
+  </ion-item>
+</ion-content>

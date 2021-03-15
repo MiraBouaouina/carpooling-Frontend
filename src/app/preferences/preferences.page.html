@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title text-capitalize>edit preferences</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let prefer of preferenceData">
+      <ion-icon slot="start" mode="ios" name={{prefer.icon}} expand="icon-only" color="secondary"></ion-icon>
+      <ion-label>
+        <p>{{prefer.header}}</p>
+        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder={{prefer.placeholder}}
+          [(ngModel)]="prefer.list.model" mode="ios" text-capitalize>
+          <ion-select-option *ngFor="let select of prefer.list" value={{select.chattiness}} selected>
+            {{select.chattiness}}
+          </ion-select-option>
+        </ion-select>
+      </ion-label>
+    </ion-item>
+    <ion-button text-capitalize expand="block" type="submit" color="secondary" margin-horizontal>save preference
+    </ion-button>
+  </ion-list>
+</ion-content>

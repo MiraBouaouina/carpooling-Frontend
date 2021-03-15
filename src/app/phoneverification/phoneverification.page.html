@@ -1,0 +1,30 @@
+<ion-content padding>
+  <div padding-bottom>
+    <div text-center>
+      <p class="textBold">Enter the code that was sent to</p>
+      <span class="dangerspan">{{phoneNumber}} </span>
+    </div>
+
+    <div class="divOuter marginTop">
+      <div class="divInner marginTop">
+        <ion-input type="tel" class="inputBorder  marginTop" #otp1 maxlength="1" [(ngModel)]="otpInput1"
+          (keyup)="next(otp2,'1')"></ion-input>
+        <ion-input type="tel" class="inputBorder marginTop" #otp2 maxlength="1" [(ngModel)]="otpInput2"
+          (keyup)="next(otp3,'2')"></ion-input>
+        <ion-input type="tel" class="inputBorder marginTop" #otp3 maxlength="1" [(ngModel)]="otpInput3"
+          (keyup)="next(otp4,'3')"></ion-input>
+        <ion-input type="tel" class="inputBorder marginTop" #otp4 maxlength="1" [(ngModel)]="otpInput4"></ion-input>
+      </div>
+    </div>
+  </div>
+
+  <div padding-vertical padding-horizontal margin-horizontal margin-vertical text-center>
+    <ion-button color="secondary" expand="block" class="btnSubmit textBold" (click)="verify()" margin-bottom>continue
+    </ion-button>
+    <ion-text color="danger">I didn't get a code</ion-text>
+  </div>
+  <div text-center class="divMedium">
+    <p>Tap continue to accept Facebook's <u>Terms,data Policy,cookie use </u>and the <u>Privacy Policy</u> and <u>Terms
+        of service</u> of tinder.</p>
+  </div>
+</ion-content>

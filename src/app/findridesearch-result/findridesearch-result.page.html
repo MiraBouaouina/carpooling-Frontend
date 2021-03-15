@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <ion-text text-wrap>{{pickupLoc}} </ion-text>
+        <ion-text>
+          <ion-icon name="arrow-forward" expand="icon-only"></ion-icon> {{destLoc}}
+        </ion-text>
+        <p>{{date}} , {{time}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-card class="map_card" *ngFor="let cards of ridesList" (click)="goforBooking(cards)">
+      <ion-item>
+        <div slot="start" class="verticalLineDiv">
+          <ion-label>
+            <ion-icon name="arrow-dropdown-circle" class="icon_drop"></ion-icon>
+            <div class="virtical_dash" slot="start"></div>
+            <ion-icon name="pin" class="icon_pin"></ion-icon>
+          </ion-label>
+        </div>
+        <ion-label>
+          <p class="horizontal_line">{{cards.pickup}}</p>
+          <p>{{cards.destination}}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-img [src]=cards.image></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <h2>{{cards.name}}</h2>
+          <rating [(ngModel)]="starsCount" [max]="5" iconClass="star" fullIcon="☆" emptyIcon="★" [readonly]="false"
+            [disabled]="false" [required]="true" [float]="true" [titles]="['one', 'two', 'three', 'four', 'five']"
+            style="color:orange">
+          </rating>
+          <p>{{cards.car}}</p>
+        </ion-label>
+        <ion-label>
+          <ion-fab vertical="top" horizontal="end" slot="fixed">
+            <ion-note>₹ {{cards.cost}}</ion-note>
+          </ion-fab>
+
+          <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+            <ion-icon name="call" expand="icon-only"></ion-icon>
+          </ion-fab>
+        </ion-label>
+      </ion-item>
+      <ion-item padding-bottom>
+        <ion-icon name="pin" expand="icon-only" slot="start" color="danger" class="marginleft"></ion-icon>
+        <ion-label>{{cards.numberPlate}}</ion-label>
+        <ion-button color="secondary" fill="clear" slot="end"> Scheduled</ion-button>
+
+      </ion-item>
+    </ion-card>
+
+  </ion-list>
+
+</ion-content>

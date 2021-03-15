@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>calender</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="gotoDrop(myDate)">
+    <ion-fab-button color="secondary">
+      <ion-icon name="arrow-forward" mode="md"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="flex">
+    <ion-list class="width padding_top">
+      <ion-item>
+        <ion-label text-center>
+          <ion-text *ngIf="tripValue !== 'returnTrip'">When are you going?</ion-text>
+          <ion-text *ngIf="tripValue == 'returnTrip'">When are you coming back?</ion-text>
+          <p>Click here to select a date</p>
+          <ion-icon name="arrow-down" expand="icon-only" color="secondary" class="drop"></ion-icon>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <div  class="widthCalender">
+      <li-ionic4-datepicker [(ngModel)]="myDate" name="myDate" class="widthCalender" [inputDateConfig]="datePickerObj">{{myDate}}
+      </li-ionic4-datepicker>
+    </div>
+  </div>
+
+</ion-content>

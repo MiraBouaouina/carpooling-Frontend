@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="gotoDrop(passengerNo)">
+    <ion-fab-button color="secondary">
+      <ion-icon name="arrow-forward" mode="md"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="headerContent">
+    <ion-item>
+      <ion-label>
+        <ion-text text-wrap *ngIf="comingFrom == 'direct'">{{headerText}}</ion-text>
+        <ion-text text-wrap *ngIf="comingFrom == 'ticketBook' ">{{headerTextticketBook}}</ion-text>
+      </ion-label>
+    </ion-item>
+
+  </div>
+  <div class="count">
+    <ion-segment mode="md">
+      <ion-segment-button mode="md" no-padding color="undefined" (click)="updateCart('remove')" class="segmentBtn"
+        [disabled]="product <= 0 ">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-input padding-horizontal class="textUnits" [(ngModel)]="passengerNo" value={{product}} readonly
+        placeholder={{product}}></ion-input>
+      <ion-segment-button mode="md" no-padding color="undefined" (click)="updateCart('add')" class="segmentBtn"
+        [disabled]="product > 5 ">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-content>

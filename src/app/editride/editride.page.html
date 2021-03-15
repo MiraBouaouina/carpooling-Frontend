@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Journey & stops</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let editDetails of editData" (click)="gotoPages(editDetails.route)">
+      <ion-label>
+        <ion-text color="secondary">{{editDetails.head}}</ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer padding>
+  <ion-toolbar>
+    <ion-button expand="block" color="secondary" type="submit" text-capitalize (click)="saveData()">Delete</ion-button>
+  </ion-toolbar>
+</ion-footer>

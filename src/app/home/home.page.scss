@@ -1,0 +1,130 @@
+/**
+  * Car Pool starter (https://store.enappd.com/product/blablacar-cloneionic-4-car-pooling-app-starter)
+ *
+ * Copyright © 2019-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source tree.
+ */.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+ion-content {
+  --background: rgba(0, 0, 0, 0.28);
+}
+ion-segment-button {
+  --color-checked: var(--ion-color-secondary-tint);
+  --color-checked-disabled: var(--color-checked);
+  --indicator-color-checked: var(--ion-color-warning-tint) !important;
+}
+.findRide_button {
+  --background: white;
+  color: var(--ion-color-secondary-tint);
+}
+ion-button {
+  width: 100%;
+  height: 48px;
+}
+.currentContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px;
+}
+h1 {
+  color: white;
+  font-weight: bold;
+}
+ion-card.rideComplete {
+  --background: var(--ion-color-warning-contrast);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 16px 0px 0 0px;
+  border: 1px solid gray;
+  border-radius: 0;
+  h2 {
+    color: #006064;
+    font-weight: bold;
+  }
+  p {
+    color: #006064;
+  }
+}
+ion-list-header {
+  background: rgb(12, 209, 232);
+  color: white;
+}
+
+ion-card.historyCards {
+  --background: white;
+  ion-item.dafault_item {
+    --inner-border-width: 0 0 0px 0;
+    font-size: 14px;
+    --min-height: 30px !important;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  ion-item {
+    --inner-border-width: 0 0 0px 0;
+    height: 32px;
+  }
+  .virtical_dash {
+    height: 30px !important;
+    width: 74%;
+    border-style: dashed;
+    display: flex;
+    border-left: dashed 1px;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    margin-left: 6px;
+  }
+  ion-label {
+    margin: 3px 3px 3px 0px !important;
+    color: rgb(0, 96, 100);
+  }
+  .icon_drop {
+    font-size: 14px;
+    color: green;
+    margin-inline-end: 13px;
+  }
+  .icon_pin {
+    font-size: 14px;
+    color: orange;
+    margin-inline-end: 13px;
+  }
+  .car_icon {
+    position: absolute;
+    right: 4%;
+    top: 20%;
+  }
+  ion-thumbnail {
+    --size: 40px !important;
+    height: 22px !important;
+    margin: 0px 8px 0px 0 !important;
+  }
+  ion-text {
+    font-size: 14px;
+  }
+  ion-card {
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+    border: none;
+  }
+}
+ion-icon {
+  -webkit-margin-end: 12px;
+  margin-inline-end: 12px;
+}
+.title-ios {
+  padding-inline-start: 32px;
+}
+.segment-button-checked {
+  background: var(--ion-color-secondary-tint);
+  color: var(--ion-color-dark-contrast) !important;
+}
+span.rating {
+  color: var(--ion-color-warning) !important;
+}

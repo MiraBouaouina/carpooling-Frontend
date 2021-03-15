@@ -1,0 +1,57 @@
+<ion-header color="secondary">
+  <ion-toolbar color="secondary">
+    <ion-title>Profile</ion-title>
+    <div class="profileImage" *ngFor="let profile of profileInfo">
+      <ion-avatar
+        [ngStyle]="{'background':'url('+ profile.image +')','background-size':'cover','background-position':'center'}">
+      </ion-avatar>
+      <ion-item color="secondary">
+        <ion-label>
+          <h2 color="light">{{profile.name}}</h2>
+          <p>{{profile.userType}}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar color="secondary">
+    <ion-segment (ionChange)="segmentValue($event)">
+      <ion-segment-button checked value="details">
+        <ion-label>details</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="account">
+        <ion-label>account</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="segmentButton == 'details'">
+    <div *ngFor="let profileData of profileInfoDetails">
+      <ion-list>
+        <ion-list-header text-capitalize>{{profileData.header}}</ion-list-header>
+        <ion-item *ngIf="profileData.headerText" (click)="goforProfiledit(profileData.headerText)">
+          <p text-capitalize class="withMargin">{{profileData.headerText}}</p>
+        </ion-item>
+        <ion-item *ngIf="profileData.headerText1" (click)="goforPreferences(profileData.headerText1)">
+          <p text-capitalize class="withMargin">{{profileData.headerText1}}</p>
+        </ion-item>
+        <ion-item *ngIf="profileData.headerText2" (click)="goforEmailVerification(profileData.headerText2)">
+          <p text-capitalize class="withMargin">{{profileData.headerText2}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <div *ngIf="segmentButton == 'account' ">
+    <ion-card>
+      <ion-item padding>
+        <ion-label>
+          <ion-text text-justify text-wrap color="secondary">
+            Sorry no account details available! Please try after some time.
+          </ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>

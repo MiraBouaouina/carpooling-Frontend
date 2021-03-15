@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title text-start>Inbox</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentValue($event)">
+      <ion-segment-button value="message" checked>MESSAGES</ion-segment-button>
+      <ion-segment-button value="notification">NOTIFICATIONS</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="buttonValue == 'message'">
+    <app-chatlist></app-chatlist>
+  </div>
+  <div *ngIf="buttonValue == 'notification'">
+    <ion-list lines="full" margin-top>
+
+      <ion-item class="paddingVertical" *ngFor="let notification of notifications"
+        (click)="notificationAlert(notification)">
+        <ion-avatar slot="start">
+          <img [src]="notification.iconUrl">
+        </ion-avatar>
+
+        <div class="notificationText">
+          <h4 text-capitalize no-margin class="notificationHeading"> {{notification.title}}</h4>
+          <span class="descText" text-nowrap>{{notification.subtitle}}</span>
+        </div>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>

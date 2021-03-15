@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label text-center padding-horizontal>
+        <ion-text text-wrap padding-horizontal>{{header}}</ion-text>
+      </ion-label>
+    </ion-item>
+    <map-direction   [zoom]="zoom" [origin]="origin" [destination]="destination"
+      [markerOptions]="markerOptions" [latitude]="stopoverLat" [longitude]="stopoverLng"></map-direction>
+  </ion-list>
+</ion-content>
+<ion-footer padding>
+  <ion-toolbar>
+    <ion-item>
+      <ion-label>
+        <ion-text>{{stopoverAddress}}</ion-text>
+      </ion-label>
+    </ion-item>
+    <ion-button expand="block" fill="solid" color="secondary" type="submit" (click)="goforDate()">Good for me!
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

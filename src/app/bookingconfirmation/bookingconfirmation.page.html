@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <progress-bar [progress]="progress" [color-degraded]="{'0': '#00cbcb',  '15': '#f9c3d3', '25': '#fd8c8e'}">
+  </progress-bar>
+  <ion-row>
+    <ion-col size="12">
+      <div text-center>
+        <img src="assets/image/cartaxi.png">
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <div text-center>
+        <p class="text_color" no-margin> REQUEST ONGOING </p>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content class="content-bg">
+
+  <ion-card class="map_card">
+    <ion-item>
+      <div slot="start">
+        <ion-label>
+          <ion-icon name="arrow-dropdown-circle" class="icon_drop"></ion-icon>
+          <div class="virtical_dash" slot="start"></div>
+          <ion-icon name="pin" class="icon_pin"></ion-icon>
+        </ion-label>
+      </div>
+      <ion-label>
+        <p class="horizontal_line">{{pickupLoc}}</p>
+        <p>{{destLoc}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>
+<ion-footer padding>
+  <ion-toolbar>
+    <ion-button expand="block" type="submit" class="submit_button" color="secondary">CANCEL REQUEST</ion-button>
+  </ion-toolbar>
+</ion-footer>

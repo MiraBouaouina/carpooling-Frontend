@@ -1,0 +1,74 @@
+/**
+  * Car Pool starter (https://store.enappd.com/product/blablacar-cloneionic-4-car-pooling-app-starter)
+ *
+ * Copyright © 2019-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source tree.
+ */
+// .li-ionic4-datePicker {
+//   .modal-wrapper {
+//     height: 75%;
+//     width: 310px;
+//     border-bottom: none;
+//     @media (min-width: 768px) {
+//       width: 350px;
+//       height: 65%;
+//     }
+//   }
+// }
+
+.flex {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.width {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.widthCalender {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+ion-list {
+  margin-bottom: 32px;
+}
+ion-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(0, 131, 143) !important;
+}
+.padding_top {
+  padding-top: 50px;
+}
+ion-label {
+  p {
+    color: var(--ion-color-medium);
+    font-size: 16px;
+  }
+}
+.drop {
+  font-size: 64px;
+}
+ion-fab {
+  bottom: 30px;
+  ion-fab-button {
+    width: 46px;
+    height: 46px;
+  }
+}
+ion-item {
+  --inner-border-width: 0 0 0px 0;
+  --inner-padding-end: 0px !important;
+}

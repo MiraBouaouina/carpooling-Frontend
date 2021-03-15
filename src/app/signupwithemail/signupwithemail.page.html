@@ -1,0 +1,35 @@
+<ion-content padding margin-top>
+  <ion-card no-margin margin-top class="singUpCard">
+    <ion-card-header color="primary" class="cardHeader">
+      <ion-card-title class="headerText"><b>Sign up</b> with <br />
+        email and password
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content no-padding padding-top class="cardContents">
+      <ion-list>
+        <ion-item lines="none">
+          <ion-input class="placeholdertext inputField" type="text" placeholder="name@example.com" [(ngModel)]="email"
+            padding-start></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-input class="placeholdertext inputField" type="password" placeholder="Password" [(ngModel)]="password"
+            padding-start clearInput></ion-input>
+        </ion-item>
+
+        <div padding-vertical padding-horizontal>
+          <ion-button color="secondary" expand="block" class="btnSubmit" (click)="register()">Sign
+            Up
+          </ion-button>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <div class="contentBgColor" text-center padding-bottom (click)="login()">
+    <ion-label class="footerBottomText">Already have an account? <b>Sign In</b></ion-label>
+  </div>
+</ion-footer>

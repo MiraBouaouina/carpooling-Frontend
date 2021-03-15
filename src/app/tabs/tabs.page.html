@@ -1,0 +1,10 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab={{tabs.tab}} *ngFor="let tabs of tabRoutes;let i= index" (click)="showtabLabel(tabs.label,i)">
+      <ion-icon name={{tabs.iconName}}></ion-icon>
+      <ion-label *ngIf="clicked == tabs.label">{{tabs.label}}</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

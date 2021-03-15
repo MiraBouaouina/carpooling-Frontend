@@ -1,0 +1,35 @@
+<ion-list>
+  <div *ngFor="let chat of chatData">
+     <ion-item (click)="goforChat(chat)">
+      <div class="ProfileAvatr" slot="start">
+        <ion-avatar class="chatImage">
+          <ion-img [src]="chat.image"></ion-img>
+        </ion-avatar>
+      </div>
+      <ion-label>
+        <div class="withcount">
+          <div class="nameAvatar">
+            <h2>{{chat.name}}
+            </h2>
+          </div>
+          <div class="timeEnd">
+            <ion-text slot="end" color="medium">{{chat.time}}</ion-text>
+            <ion-avatar class="chatCount" *ngIf="chat.count">{{chat.count}}</ion-avatar>
+          </div>
+        </div>
+        <p class="widthHalf">{{chat.description}}</p>
+        <div class="typeAnddistance">
+          <div class="center">
+            <ion-icon name="pin" expand="icon-only" color="primary"></ion-icon>
+            <p color="medium" class="typeAnddistancePara">{{chat.distance}}</p>
+          </div>
+          <div class="center">
+            <ion-img [src]=chat.crown class="crown"></ion-img>
+            <p class="typeAnddistancePara">{{chat.type}}</p>
+          </div>
+        </div>
+      </ion-label>
+    </ion-item>
+
+  </div>
+</ion-list>

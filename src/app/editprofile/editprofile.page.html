@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title text-capitalize>editprofile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item (click)="takeProfilePic()">
+      <ion-avatar sot="start"
+        [ngStyle]="{'background':'url(../../assets/image/chat6.jpg)','background-size':'cover','background-position':'center'}">
+      </ion-avatar>
+      <ion-text color="secondary" padding-start>Choose profile photo</ion-text>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <div *ngFor="let data of bioData">
+      <ion-list-header *ngIf="data.headerText" text-capitalize>{{data.headerText}}</ion-list-header>
+      <ion-list-header text-capitalize>{{data.header}}</ion-list-header>
+
+      <ion-item>
+        <ion-label position="stacked" *ngIf="data.label" color="medium">{{data.label}}</ion-label>
+        <ion-input type="text" [(ngModel)]="data.model" placeholder={{data.model}}></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="data.button" class="buttonClass">
+        <ion-button type="submit" expand="block" color="secondary" margin-vertical (click)="showdataSavedToast()">
+          {{data.button}}</ion-button>
+      </ion-item>
+
+
+      <ion-item *ngIf="data.label1">
+        <ion-label position="stacked" color="medium">{{data.label1}}</ion-label>
+        <ion-input type="text" [(ngModel)]="data.model1" placeholder={{data.model1}}></ion-input>
+      </ion-item>
+      <ion-item *ngIf="data.button1" class="buttonClass">
+        <ion-button type="submit" expand="block" color="secondary" margin-vertical>{{data.button1}}</ion-button>
+      </ion-item>
+    </div>
+
+  </ion-list>
+</ion-content>

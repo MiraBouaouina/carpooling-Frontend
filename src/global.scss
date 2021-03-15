@@ -1,0 +1,59 @@
+/**
+  * Car Pool starter (https://store.enappd.com/product/blablacar-cloneionic-4-car-pooling-app-starter)
+ *
+ * Copyright © 2019-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source tree.
+ */
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+ion-footer {
+  ion-button {
+    width: 100%;
+  }
+}
+input {
+  border-bottom: none !important;
+}
+li-ionic4-datepicker > input {
+  text-align: center !important;
+}
+.searchbar-input.sc-ion-searchbar-md {
+  box-shadow: none !important;
+  text-align: start !important;
+}
+.action-sheet-group.sc-ion-action-sheet-md:first-child {
+  padding-top: 6px;
+  border-radius: 10px !important;
+  margin: 10px !important;
+}
+.action-sheet-button.sc-ion-action-sheet-md {
+  padding: 0 16px;
+  position: relative;
+  height: 52px;
+  background: transparent;
+  color: #1589fd !important;
+  font-size: 20px !important;
+}
+.action-sheet-button-inner.sc-ion-action-sheet-md {
+  -ms-flex-pack: start;
+  justify-content: center;
+}
+.action-sheet-group.sc-ion-action-sheet-md:last-child {
+  padding-bottom: 0;
+  margin: 0px 10px 10px 10px !important;
+  border-radius: 10px;
+}
+span.rating {
+  color: var(--ion-color-warning) !important;
+}

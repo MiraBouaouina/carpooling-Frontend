@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title>calender</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="gotoDrop(timeSelected)">
+    <ion-fab-button color="secondary">
+      <ion-icon name="arrow-forward" mode="md"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="flex">
+    <ion-list class="width padding_top">
+      <ion-item>
+        <ion-label text-center>
+          <ion-text color="tertiary" text-wrap text-center> What time will you pick passengers up ?
+          </ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-card class="width">
+      <ion-item class="timeItem">
+        <ion-icon name="arrow-down" expand="icon-only" color="secondary" slot="end" mode="ios"></ion-icon>
+        <ion-datetime displayFormat="h:mm a" minuteValues="0,5,10,15,20,25,30,35,40,45,50,55" mode="ios"
+          [(ngModel)]="timeSelected" value="11:06Z" placeholder="Selecty Time">
+        </ion-datetime>
+      </ion-item>
+    </ion-card>
+  </div>
+
+</ion-content>

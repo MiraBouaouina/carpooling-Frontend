@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item class="head">
+      <ion-label text-center>
+        <ion-text>Do you want to add stopovers?</ion-text>
+      </ion-label>
+    </ion-item>
+    <div *ngIf="service.reRoute">
+      <ion-item *ngFor="let stopovers of locArray">
+        <ion-checkbox color="primary" checked slot="end"></ion-checkbox>
+        <p>{{stopovers}}</p>
+      </ion-item>
+    </div>
+
+  </ion-list>
+</ion-content>
+<ion-footer padding>
+  <ion-toolbar>
+    <ion-item margin-bottom>
+      <ion-input type="text" readonly placeholder="Add stopovers and get more co-travellers"
+        (click)="goforStopovers('stopover')">
+      </ion-input>
+    </ion-item>
+    <ion-button expand="block" color="secondary" type="submit" (click)="goforStopoversRouteMap()">confirm</ion-button>
+  </ion-toolbar>
+</ion-footer>

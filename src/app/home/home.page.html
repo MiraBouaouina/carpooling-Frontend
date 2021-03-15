@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title text-start>
+      Home
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentValue($event)" mode="md">
+      <ion-segment-button checked value="current">
+        <ion-label text-uppercase>current</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="history">
+        <ion-label text-uppercase>history</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  [ngStyle]="{'background':'url(../../assets/image/login.jpg)','background-size':'cover','background-position':'center'}">
+
+  <div *ngIf="segmenValue == 'current'  &&  service.cardDetails" padding>
+    <ion-list-header text-uppercase>Your offered rides</ion-list-header>
+    <ion-card (click)="gotoeditRide()" class="rideComplete">
+      <ion-item>
+        <ion-label>
+          <h2>{{journeyDate}} - {{journeyTime}}</h2>
+          <p>{{pickSub}}<span> >> ... >> </span>{{desSub}}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="end" name="more" expand="icon-only"></ion-icon>
+        <p>{{seatsAval}} seats available</p>
+      </ion-item>
+    </ion-card>
+  </div>
+
+
+  <div *ngIf="segmenValue == 'current' && !service.cardDetails" class="currentContent">
+    <h1 color="light">Going somewhere?</h1>
+    <ion-text color="light" margin-bottom text-center>Share your travel costs with our community.</ion-text>
+    <ion-button fill="solid" margin-bottom expand="round" color="secondary" (click)="gotoOfferaRide()" text-uppercase>
+      offer a ride
+    </ion-button>
+    <ion-button fill="clear" expand="round" class="findRide_button" (click)="gotofindaRide()" text-uppercase>find a ride
+    </ion-button>
+  </div>
+
+  <div *ngIf="segmenValue == 'history'" class="historyContent">
+    <ion-card *ngFor="let item of data; let i of index" (click)="dismiss()" class="historyCards">
+      <div padding-vertical>
+        <ion-item class="dafault_item">
+          <ion-icon name={{item.iconName}} class="icon_drop" slot="start"></ion-icon>
+          <ion-label>{{item.label}}</ion-label>
+        </ion-item>
+
+        <ion-item class="dafault_item">
+          <div class="virtical_dash" slot="start"></div>
+          <!-- <ion-thumbnail slot="end">
+            <img src="{{item.image}}">
+          </ion-thumbnail> -->
+          <ion-icon name="logo-model-s" color="secondary" slot="start"></ion-icon>
+
+        </ion-item>
+
+        <ion-item class="dafault_item">
+          <ion-icon name="{{item.iconName2}}" class="icon_pin" slot="start"></ion-icon>
+          <ion-label>{{item.label2}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-text slot="start">{{item.text}}</ion-text>
+          <ion-text slot="end">{{item.text2}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-text slot="start">{{item.head}}</ion-text>
+          <rating slot="end" [(ngModel)]="starsCount" [max]="5" iconClass="star" fullIcon="☆" emptyIcon="★"
+            [readonly]="false" [disabled]="false" [required]="true" [float]="true"
+            [titles]="['one', 'two', 'three', 'four', 'five']">
+          </rating>
+        </ion-item>
+      </div>
+    </ion-card>
+
+  </div>
+</ion-content>

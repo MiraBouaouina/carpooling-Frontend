@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-capitalize>sign up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="flex">
+    <ion-button expand="round" color="tertiary">
+      <ion-icon slot="start" name="logo-facebook" expand="icon-only" color="light"></ion-icon>
+      <span slot="end">connect with facebook</span>
+    </ion-button>
+
+    <div class="or_with_Line">
+      <hr color="dark">
+      <p>or</p>
+      <hr color="dark">
+    </div>
+    <ion-button expand="round" color="secondary" (click)="signupWithEmail()">
+      <span slot="end">sign up with your email</span>
+    </ion-button>
+    <ion-item>
+      <ion-text text-center>By signing up with your email or facebok, you accept the <u class="secondary">T&C's </u>
+        and <u class="secondary"> Privacy policy </u></ion-text>
+    </ion-item>
+
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" color="secondary" fill="clear" (click)="gotoLoginformHome()">
+      <span slot="end" >Already a member ? login</span>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

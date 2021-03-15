@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add new vehicle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div padding-top>
+    <ion-list *ngFor="let item of newvehicleData">
+      <ion-list-header text-uppercase>{{item.label}}</ion-list-header>
+      <ion-card>
+        <ion-item>
+          <ion-select [interfaceOptions]="customAlertOptions" interface="popover" placeholder={{item.placeholder}}
+            [(ngModel)]="item.name" (ionChange)="getValue(item.name)">
+            <ion-select-option value={{selectData.name}} *ngFor="let selectData of item.data;let  i of index">
+              {{selectData.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+  </div>
+
+  <ion-list>
+    <ion-list-header text-uppercase>License PLate</ion-list-header>
+    <ion-card>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="license" placeholder="License PLate No"></ion-input>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>
+<ion-footer (click)="openpageTRansition()">
+  <div class="footer_center_item">
+    <ion-button expand="block" color="secondary">COMPLETE</ion-button>
+
+  </div>
+</ion-footer>

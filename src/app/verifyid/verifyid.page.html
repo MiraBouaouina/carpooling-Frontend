@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color="secondary">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center>Document Management</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of documents" (click)="gotoPage(item.url)">
+    <ion-item>
+      <ion-thumbnail class="ion-thumbnail">
+        <ion-icon name="{{item.icon}}" expand="icon-only" class="icon-thumbnail"></ion-icon>
+      </ion-thumbnail>
+      <ion-label>
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+      </ion-label>
+    </ion-item>
+    <div class="card_bottom_item">
+      <h2>{{item.name}}</h2>
+    </div>
+  </ion-card>
+</ion-content>

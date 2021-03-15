@@ -1,0 +1,7 @@
+{
+  "name": "CarPool",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

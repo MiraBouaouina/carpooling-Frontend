@@ -1,0 +1,63 @@
+/**
+  * Car Pool starter (https://store.enappd.com/product/blablacar-cloneionic-4-car-pooling-app-starter)
+ *
+ * Copyright © 2019-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source tree.
+ */
+ .no_borderbottom {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: white;
+  --inner-border-width: 0;
+}
+.wallet_card {
+  border-radius: 10px;
+}
+.avatar_class {
+  background: var(--ion-color-secondary-tint);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  color: white;
+}
+.avatar_class1 {
+  background: var(--ion-color-secondary-tint);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  color: white;
+}
+.icon_avatar1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.footer_center_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f4f9;
+}
+.footer_center_item_background {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 26px 0px 48px 0px;
+  background: white;
+  border-radius: 64px;
+}
+.footer-md:before {
+  background-image: none !important;
+}
+.header-md:after {
+  left: 0;
+  bottom: -1px;
+  height: 1px;
+}

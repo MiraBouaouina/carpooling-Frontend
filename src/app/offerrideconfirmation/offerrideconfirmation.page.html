@@ -1,0 +1,17 @@
+<ion-content>
+  <div class="flex">
+    <div class="imageDiv"
+      [ngStyle]="{'background':'url( '+ confirmImage +')', 'background-size':'cover', 'background-position':'center'}">
+    </div>
+    <ion-item>
+      <ion-text *ngIf="service.bookRideConfirmation">Your ride is now booked! Driver will now reach you soon on call or
+        chat!</ion-text>
+      <ion-text *ngIf="!service.bookRideConfirmation">Your ride is now online! Passengers can now book and travel with
+        you!</ion-text>
+    </ion-item>
+
+    <div (click)="onRideSucces()" class="width">
+      <ion-button expand="round" type="submit" color="light">Ok</ion-button>
+    </div>
+  </div>
+</ion-content>
